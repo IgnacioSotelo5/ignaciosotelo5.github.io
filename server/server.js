@@ -1,7 +1,6 @@
 const movies = require('./data/movies.json')
 const express = require('express')
 const app = express()
-const port = 3030
 
 app.use(express.json())
 
@@ -29,5 +28,5 @@ app.get('/movies/:id', (req, res) => {
 
 
 app.listen(port, ()=> {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
+    console.log(`Servidor corriendo en: `, process.env.PORT);
 })
