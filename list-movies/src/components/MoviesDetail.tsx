@@ -73,7 +73,7 @@ export function MovieDetails() {
                       </div>
                       </div>
                       
-                ) : <p>Esta pelicula no existe.</p>
+                ) : <p>No existen peliculas con este ID.</p>
             }
         </>
     )
