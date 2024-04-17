@@ -2,7 +2,7 @@ import { BadRequestException, Injectable, NotFoundException } from '@nestjs/comm
 import { STATUS_CODES } from 'http';
 
 
-const base_url = 'http://localhost:3030/movies'
+const base_url = 'https://movies-app-deploy-production-b95e.up.railway.app/movies'
 
 @Injectable()
 export class MovieService {
