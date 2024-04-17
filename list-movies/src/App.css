@@ -77,9 +77,10 @@ body{
   padding: 0;
 }
 
-.movie h4{
+.movie p{
   padding: 0;  
   margin: 0;
+  font-weight: 600;
   
 }
 
@@ -88,7 +89,8 @@ body{
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical
+  -webkit-box-orient: vertical;
+  color: white;
 }
 
 h4{

@@ -43,9 +43,9 @@ export function Movies({genres, movies, search} : {genres: string[], movies: Mov
                       {movie.rate}
                     </span>
                       <Link to={`/${movie.id}`}>
-                        <h4>{movie.title}</h4>
+                        <p>{movie.title}</p>
                       </Link>
-                      <button onClick={() => handleAdd({movie})}>
+                      <button id="add-to-playlist-button" onClick={() => handleAdd({movie})}>
                         <PlayListAddIcon className='add-icon'/>
                         {'Add to watchlist'}
                       </button>

@@ -29,7 +29,7 @@ function App() {
         <h1>Find Movies</h1>
         <form onSubmit={handleSubmit}>
           <input name='search' type='search' id='search' placeholder='Avengers, Avatar, Interstellar' />
-           <button type='submit'>
+           <button id='button-search' type='submit'>
             <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="m21 21l-4.486-4.494M19 10.5a8.5 8.5 0 1 1-17 0a8.5 8.5 0 0 1 17 0Z"/></svg>
           </button>
         </form>

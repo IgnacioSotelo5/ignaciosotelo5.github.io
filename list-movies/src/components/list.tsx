@@ -35,14 +35,14 @@ export function List(){
     return(
         <>
         <div>
-        <button onClick={handleCart} className={`${classCart === 'list' ? 'button-list' : 'button-list-hide'}`}>
+        <button id="cart-handler-button" onClick={handleCart} className={`${classCart === 'list' ? 'button-list' : 'button-list-hide'}`}>
             {
                 classCart === 'hide-list' ? <LeftToRightListTriangleIcon /> :  <CloseIcon />
             }            
         </button>
         <aside className={classCart}>
         <h2>Watchlist</h2>
-        <button className={`${classCart === 'hide-list' ? 'button-clear-list-hide' : 'button-clear-list'}`} onClick={clearCart}>
+        <button id="cart-clear-button" className={`${classCart === 'hide-list' ? 'button-clear-list-hide' : 'button-clear-list'}`} onClick={clearCart}>
             <DeleteIcon />
         </button>
 
