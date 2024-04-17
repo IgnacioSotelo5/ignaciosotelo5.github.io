@@ -2,7 +2,7 @@ import Movies from "../interfaces/movie";
 
 export async function searchMovies({search} : {search: string}){
     try{
-        const response = await fetch(`http://localhost:3000/movies?search=${search}`) 
+        const response = await fetch(`https://movies-app-deploy-production.up.railway.app/movies?search=${search}`) 
         const data = await response.json();         
                  
         return data?.map((movie: Movies) => ({
