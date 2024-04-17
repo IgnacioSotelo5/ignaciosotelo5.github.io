@@ -1,7 +1,7 @@
 export async function searchMovieByID({id} : {id: string}){    
     
     try{
-        const response = await fetch(`http://localhost:3000/movies/${id}`)                 
+        const response = await fetch(`https://movies-app-deploy-production.up.railway.app/movies/${id}`)                 
         const data = await response.json();
         const dataMapped = Object.entries(data).reduce((obj: {[key: string]: unknown}, [keys, value]) => {           
             obj[keys] = value;
