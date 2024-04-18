@@ -10,11 +10,10 @@ export default function useMovies ({search, id}:{search: string, id: string}){
     const previousSearch = useRef(search)  
     const isFirstRender = useRef(true)    
 
-    const getMovies = useCallback( async()=>{
-        if(!search.match(/^(?!.*\s)[\s\S]*$/)) return
-
+    const getMovies = useCallback( async()=>{                       
         if(!isFirstRender.current){
             if(search.length <= 3) return
+            if(!search.match(/\S/)) return            
         }
         if(isFirstRender.current){
             isFirstRender.current = false
@@ -23,8 +22,7 @@ export default function useMovies ({search, id}:{search: string, id: string}){
                 return
             }  
         }
-        
-        try {            
+        try {              
             const movies = await searchMovies({search})                
             setMovies(movies)
             previousSearch.current = search

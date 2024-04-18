@@ -374,7 +374,14 @@ form label{
   scrollbar-width: none;
 }
 
+.list-wrapper span{
+  align-self: center;
+  font-weight: bolder;
+}
+
 .list-wrapper p{
+  font-size: smaller;
+  width: 75%;
   align-self: center;
 }
 
@@ -404,7 +411,7 @@ form label{
   background-color: transparent;
   position: fixed;
   top: 28px;
-  right: 21%;
+  right: 20%;
   z-index: 200;
   transition: all .6s ease-in-out;
   transform: translateX(0);
@@ -422,6 +429,7 @@ form label{
   position: absolute;
   top: 28px;
   right: 40px;
+  z-index: 200;
   transition: all .6s ease-in-out;
   transform: translateX(100%);
 }
@@ -458,5 +466,21 @@ form label{
 }
 
 .list-item-text h5{
+  margin: 0;
+}
+
+@media (max-width : 700px) {
+  .list{
+    min-width: 50%;
+  }
+  .button-list{
+    right: 40%;
+    z-index: 500;
+  }
+}
+
+.error{
+  font-size: xx-large;
+  font-weight: 600;
   margin: 0;
 }

@@ -116,9 +116,9 @@
     margin: 20px auto;
     padding: 0 10px;
     word-wrap: break-word;
-    color: #363636;
+    color: #dbdbdb;
     color: var(--text-main);
-    background: #fff;
+    background: #202b38;
     background: var(--background-body);
     text-rendering: optimizeLegibility;
   }
@@ -731,6 +731,7 @@
   button,
   textarea {
     -webkit-appearance: none;
+    appearance: none;
   }
   
   textarea {

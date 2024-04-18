@@ -59,7 +59,7 @@ export function MovieDetails() {
                         )
                         :
                         (
-                            <p>No se encontro el genero de la pelicula.</p>
+                            <p>The genre of the movie was not found.</p>
                         )  
                     }
                       <span className="rate">
@@ -73,7 +73,7 @@ export function MovieDetails() {
                       </div>
                       </div>
                       
-                ) : <p>No existen peliculas con este ID.</p>
+                ) : <p className="error">There are no movies with this ID.</p>
             }
         </>
     )

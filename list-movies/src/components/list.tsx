@@ -52,7 +52,12 @@ export function List(){
                     list?.map((movie) => (
                         <ListItem key={movie.id} movie={movie} />
                     ))
-                ) : <p>Todavia no agregaste peliculas a la lista</p>
+                ) : (
+                    <>
+                    <span>Your Watchlist is empty</span>
+                    <p>Add movies to your Watchlist to keep track on wath you want to watch.</p>
+                    </>
+                )
             }
             </ul>
         </aside>

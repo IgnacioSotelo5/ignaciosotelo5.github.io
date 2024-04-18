@@ -6,25 +6,40 @@ import { useContext } from "react";
 import { MovieListContext } from "../context/movie-list-context";
 
 export function Movies({genres, movies, search} : {genres: string[], movies: Movies[] 
-  | Movies | null, search : string}){  
+  | Movies | null, search : string}){
   const {list, setList} = useContext(MovieListContext) 
 
-  const handleAdd = ({movie} : {movie : Movies}) =>{
+ const handleAdd = ({movie} : {movie : Movies}) =>{
     if(list.find((m: Movies) => m.id === movie.id)) return
     setList([...list, movie])
+  }  
 
+  const handleBack = () =>{
+    window.location.reload()
   }
   
   return(
         <>
         { 
-          (search && search.match(/^(?!.*\s)[\s\S]*$/) && search.length > 3) ?  
+        
+        (search && search.match(/\S/) && search.length > 3) ?  
           (
             Array.isArray(movies) ? (
-              movies.map((movie) => (
+              <>
+              <button onClick={handleBack}>{'Return to movie list.'}</button>
+              {
+                movies.map((movie) => (
                   <MovieSearch key={movie.id} movie={movie} />                  
-            )
-          )) : <p>No se encontraron peliculas</p>)
+            ))
+              }
+          </>
+          ) : (
+            <>
+            <p className="error">No movies found</p>
+            <p>There are no results for "{search}", try another search</p>
+            <button onClick={handleBack}>{'Back'}</button>
+            </>
+          ))
           : 
           (genres.map((gen) => (
             <article className='genre-container' key={gen}>
@@ -53,7 +68,7 @@ export function Movies({genres, movies, search} : {genres: string[], movies: Mov
                   </div>
                 ))
               ) : (
-                <p>No se encontraron peliculas para este género.</p>
+                <p>No movies found for this genre.</p>
               )
             }
             </div>
